@@ -1,3 +1,39 @@
+// Google Analytics is initialized once in each page head via analytics.mjs.
+// Homepage campaign: native dialog handles focus containment and Escape.
+// Desktop and mobile share the same poster markup; CSS scales the composition.
+(() => {
+  const promotion = document.querySelector('.home-promotion');
+  if (!promotion || typeof promotion.showModal !== 'function') return;
+  let previousFocus;
+  const close = () => promotion.close();
+  promotion.querySelector('.promotion-close').addEventListener('click', close);
+  promotion.querySelector('.promotion-link').addEventListener('click', close);
+  promotion.addEventListener('click', event => {
+    if (event.target !== promotion) return;
+    const rect = promotion.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right ||
+        event.clientY < rect.top || event.clientY > rect.bottom) close();
+  });
+  promotion.addEventListener('close', () => {
+    document.documentElement.classList.remove('promotion-open');
+    const returnTarget = previousFocus instanceof HTMLElement && previousFocus !== document.body
+      ? previousFocus : document.querySelector('.header .logo');
+    returnTarget?.focus({ preventScroll: true });
+  });
+  setTimeout(() => {
+    previousFocus = document.activeElement;
+    promotion.showModal();
+    document.documentElement.classList.add('promotion-open');
+  }, 2000);
+})();
+
+// Residence spread stays readable without JS; its photo button uses the shared gallery.
+// The sunny residence hero is rendered by residence.mjs, without a JS override.
+// Case headings share static markup and responsive CSS across all four projects.
+// Mobile hero copy visibility is CSS-only and needs no resize handler.
+// Bilingual photo captions stay on one line through responsive CSS.
+// The four residence photo cards use CSS for their two-column mobile layout.
+// Independent information groups use CSS grid for diagrams, facts, then living.
 // Progressive enhancement: all comparison topics remain readable without JS.
 document.querySelectorAll('[data-house-explorer]').forEach(explorer => {
   const buttons = [...explorer.querySelectorAll('[data-house-topic]')];
@@ -188,7 +224,7 @@ document.querySelectorAll('.filter').forEach(button => button.addEventListener('
   const hero = document.querySelector('main > .hero');
   const img = hero?.querySelector('img');
   if (!img) return;
-  const slides = ["assets/hero/064c6f25-f428-4624-90b1-db024db8bfd8-right.png", "assets/hero/53b711f2-6464-48be-8b0e-d01b4af01e80-right.png", "assets/hero/595aa949-f336-4101-ba1e-92ed74d235e0-right.png", "assets/hero/hero-blue-house.png", "assets/hero/hero-courtyard.png"];
+  const slides = ["assets/hero/064c6f25-f428-4624-90b1-db024db8bfd8-right.png", "assets/hero/53b711f2-6464-48be-8b0e-d01b4af01e80-right-sunny.png", "assets/hero/595aa949-f336-4101-ba1e-92ed74d235e0-right.png", "assets/hero/hero-blue-house.png", "assets/hero/hero-courtyard.png"];
   const slideCopy = [
     { eyebrow: 'BUILD A BETTER SPACE', title: '不只是建築，<br>而是更好的<br>空間解決方案。', mobileTitle: '更好的空間解決方案，<br>不只是建築。', description: '組合屋規劃・結構設計・空間配置<br>以專業，回應每一種生活需求。' },
     { eyebrow: 'SPACE FOR EVERYDAY', title: '為每一種生活，<br>找到合適的<br>空間尺度。', description: '從使用習慣出發，梳理動線與配置，<br>讓空間貼近日常的節奏。' },

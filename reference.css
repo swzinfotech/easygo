@@ -228,3 +228,100 @@ body{font-size:14px}.wrap{width:min(1240px,89%)}h1,h2,h3{font-weight:500}h2{font
 .header-social a:hover,.header-social a:focus-visible{border-color:#53644f;background:#53644f;color:#fff;outline:0}
 .mobile-line-float,.mobile-facebook-float{display:none}
 @media(max-width:800px){.header-social{display:none}.mobile-line-float,.mobile-facebook-float{position:fixed;right:16px;z-index:36;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;color:#fff;box-shadow:0 10px 24px #1c382a42;transition:transform .2s,box-shadow .2s}.mobile-facebook-float{bottom:max(16px,env(safe-area-inset-bottom));background:#1877f2}.mobile-line-float{bottom:max(78px,calc(env(safe-area-inset-bottom) + 62px));background:#06c755}.mobile-line-float svg,.mobile-facebook-float svg{width:29px;height:29px;fill:currentColor}.mobile-line-float:active,.mobile-facebook-float:active{transform:scale(.93);box-shadow:0 5px 14px #1c382a42}.page-product .mobile-facebook-float{bottom:max(88px,calc(env(safe-area-inset-bottom) + 74px))}.page-product .mobile-line-float{bottom:max(150px,calc(env(safe-area-inset-bottom) + 136px))}}
+/* Residence: a responsive architectural editorial spread. */
+.residence-spread{scroll-margin-top:110px}
+.residence-cover{position:relative;isolation:isolate;overflow:hidden}
+.residence-cover>img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover}
+.residence-copy{position:absolute;inset:7% auto auto 4%;max-width:65%;color:#30382f}
+.residence-copy h2{font-family:Georgia,'Noto Serif TC','PMingLiU',serif;font-size:clamp(30px,4.1vw,58px);letter-spacing:.08em;line-height:1.4;font-weight:600}
+.residence-copy .eyebrow{color:#5e685b;margin-bottom:16px;font-size:10px}
+.residence-subtitle{font-family:serif;font-size:clamp(14px,1.6vw,22px);margin-top:12px;letter-spacing:.06em}
+.residence-intro{font-size:13px;line-height:2;margin-top:24px;letter-spacing:.06em}
+.residence-cover-note{position:absolute;right:16px;bottom:12px;font-size:10px;background:#fafaf7d9;padding:4px 9px;color:#5f675b}
+.residence-photos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:10px 22px 0}
+.residence-photos figure{margin:0;min-width:0;background:#f0efe8}
+.residence-photos img{display:block;width:100%;height:auto;aspect-ratio:1.5;object-fit:cover;filter:saturate(.65)}
+.residence-photos figcaption{padding:8px 12px;font-family:serif;font-size:16px;letter-spacing:.05em}
+.residence-spread small{font:9px/1.7 Arial,sans-serif;letter-spacing:.15em;color:#7b8175}
+.residence-photos small{margin-left:10px;display:inline-block}
+.residence-information{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:24px;padding:28px 26px}
+.residence-information>section{min-width:0}
+.residence-information>section+section{border-left:1px solid #d4d7cd;padding-left:24px}
+.residence-information h3{font-family:var(--font);font-size:22px;font-weight:500;line-height:1.5;letter-spacing:.06em;border-bottom:1px solid #d4d7cd;padding-bottom:9px;margin-bottom:17px}
+.residence-information h3 small{display:inline-block;margin-left:10px}
+.residence-facts dl{margin:0 0 28px;font-size:13px}
+.residence-facts dl>div{display:grid;grid-template-columns:70px 1fr;gap:9px;margin:12px 0}
+.residence-facts dt{color:#7a8073}.residence-facts dd{margin:0}
+.residence-facts ol{list-style:none;counter-reset:features;padding:0;margin:0;font-size:12px}
+.residence-facts li{counter-increment:features;display:flex;gap:10px;align-items:baseline;margin:13px 0}
+.residence-facts li:before{content:counter(features);flex-shrink:0;border-radius:50%;background:#a6aa97;color:white;width:22px;text-align:center;font:400 13px/22px var(--font)}
+.residence-quote{font:500 25px/1.7 var(--font);margin:26px 0 0;letter-spacing:.1em}
+.residence-information svg{display:block;width:100%;height:auto}
+.residence-information svg text{font-family:var(--font)}
+.residence-information .residence-diagram-note{font-size:11px;line-height:1.8;color:#838879;margin-top:15px}
+.residence-living{margin-top:26px}
+.residence-living>p{font-size:13px;line-height:2}
+.residence-footer{margin:0 26px;padding:20px 0;border-top:1px solid #cfd3c7;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.residence-footer>p{font-family:serif;font-size:15px;letter-spacing:.08em}
+.residence-footer small{display:block;margin-top:6px}
+.residence-footer>div{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.residence-footer .gallery-launch{position:static;margin:0;font-size:12px}
+.residence-footer .text-link{font-size:12px}
+/* Match the other case sections on mobile: shared heading, then the image. */
+@media(max-width:800px){.residence-copy{display:none}.residence-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1000px){.residence-intro{font-size:12px;margin-top:14px}.residence-information{gap:16px;padding:24px 18px}.residence-information>section+section{padding-left:16px}.residence-information h3{font-size:19px}.residence-information h3 small{display:block;margin:3px 0 0}.residence-footer{align-items:flex-start;flex-direction:column}}
+@media(max-width:700px){.residence-cover{display:flex;flex-direction:column;background:#eeefec}.residence-copy{position:static;order:-1;max-width:none;padding:26px 20px 10px}.residence-copy h2{font-size:clamp(27px,7vw,40px)}.residence-subtitle{font-size:14px;line-height:1.8}.residence-intro{font-size:12px;line-height:1.9;margin-top:16px}.residence-intro br{display:none}.residence-cover>img{aspect-ratio:1.5;object-position:70% center}.residence-cover-note{font-size:9px}.residence-photos{padding:8px 0 0;gap:8px;grid-template-columns:1fr 1fr}.residence-photos figcaption{display:flex;align-items:baseline;gap:5px;white-space:nowrap;font-size:clamp(11px,3vw,14px);letter-spacing:0;padding:8px 6px}.residence-photos small{display:inline-block;flex-shrink:0;margin:0;font-size:clamp(6px,1.65vw,8px);letter-spacing:.06em}.residence-information{grid-template-columns:1fr;padding:28px 0;gap:30px}.residence-information>section+section{padding:22px 0 0;border-left:0;border-top:1px solid #d4d7cd}.residence-information h3{font-size:22px}.residence-information h3 small{display:inline-block;margin-left:10px}.residence-facts dl>div{grid-template-columns:90px 1fr}.residence-facts li{font-size:13px}.residence-quote{font-size:22px}.residence-plan svg{max-width:440px;margin:auto}.residence-elevation svg{max-width:400px;margin:auto}.residence-footer{margin:0;padding:20px 0}.residence-footer>p{font-size:13px}.residence-footer>div{width:100%;justify-content:space-between;gap:16px}}
+/* Mobile residence: drawings, project details, then everyday living. */
+@media(max-width:800px){
+ .residence-information{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px;padding:24px 0}
+ .residence-information>.residence-facts,.residence-information>.residence-elevation{display:contents}
+ .residence-information>.residence-plan{grid-column:1;grid-row:1;border:0;padding:0}
+ .residence-drawings{grid-column:2;grid-row:1;min-width:0}
+ .residence-project-info{grid-column:1;grid-row:2;min-width:0}
+ .residence-features{grid-column:2;grid-row:2;min-width:0}
+ .residence-living{grid-column:1/-1;grid-row:3;margin:0;border-top:1px solid var(--line);padding-top:20px}
+ .residence-information .residence-quote{display:none}
+ .residence-information h3{font-size:clamp(13px,3.4vw,20px);letter-spacing:0;line-height:1.6;margin-bottom:12px}
+ .residence-information h3 small{display:block;margin:4px 0 0;font-size:8px;letter-spacing:.08em}
+ .residence-information .residence-facts dl{font-size:12px;margin:0}
+ .residence-information .residence-facts dl>div{grid-template-columns:1fr;gap:2px;margin:0 0 12px}
+ .residence-information .residence-facts li{font-size:12px;gap:6px;margin:0 0 12px;align-items:flex-start}
+ .residence-information .residence-facts li:before{width:18px;line-height:18px;font-size:11px;margin-top:2px}
+ .residence-information .residence-diagram-note{font-size:10px;margin-top:10px}
+}
+/* Homepage campaign: a single editorial poster in an accessible modal. */
+html.promotion-open{overflow:hidden}
+.home-promotion{padding:0;border:0;margin:auto;width:min(860px,calc(100% - 40px));max-width:none;max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px);overflow:auto;background:#f6f5ef;color:var(--ink);box-shadow:0 24px 100px #101d2866}
+.home-promotion::backdrop{background:#192b36a8;backdrop-filter:blur(5px)}
+.promotion-poster{position:relative;isolation:isolate}
+.promotion-close{position:absolute;right:14px;top:14px;z-index:3;display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffffa6;border-radius:50%;background:#fbfcf5ed;color:#263331;font:300 29px/1 Arial;cursor:pointer}
+.promotion-close:hover{background:white}
+.promotion-close:focus-visible,.promotion-link:focus-visible{outline:3px solid #53644f;outline-offset:-4px}
+.promotion-copy{position:relative;z-index:1;padding:34px 40px 0;pointer-events:none}
+.promotion-brand{font:600 15px/1.5 var(--font);letter-spacing:.16em}.promotion-brand span{font-size:12px;margin-left:12px;font-weight:400}
+.promotion-kicker{font-size:10px;letter-spacing:.16em;color:#6d7968;margin:30px 0 12px}
+.promotion-copy h2{font:500 clamp(28px,4vw,42px)/1.45 var(--font);letter-spacing:.07em;margin:0}
+.promotion-copy #promotion-description{font-size:13px;line-height:1.9;margin-top:16px;color:#5c6857}
+.promotion-image{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:cover;margin-top:-145px;position:relative;z-index:-1}
+.promotion-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 40px;background:#f6f5ef;border-top:1px solid #dce0d4}
+.promotion-bottom>div>span{font-size:15px;letter-spacing:.12em}.promotion-bottom small{display:block;font-size:9px;letter-spacing:.08em;color:#7b8277;margin-top:6px}
+.promotion-link{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;background:#3b4c3b;color:white;padding:15px 22px;font-size:13px;min-height:48px;white-space:nowrap}
+.promotion-link:hover{background:#526650}
+@media(max-width:600px){
+ .home-promotion{width:calc(100% - 28px);max-height:calc(100vh - 28px);max-height:calc(100dvh - 28px)}
+ .promotion-copy{min-height:clamp(190px,52.33vw,314px);padding:16px 16px 18px;background:linear-gradient(90deg,#eef4f5cc,transparent 62%)}
+ .promotion-brand{font-size:10px}.promotion-brand span{font-size:9px;margin-left:7px}
+ .promotion-kicker{margin:16px 0 8px;font-size:7px;letter-spacing:.1em}
+ .promotion-copy h2{font-size:clamp(18px,4.8vw,28px);letter-spacing:.04em}
+ .promotion-copy #promotion-description{font-size:9px;line-height:1.7;margin-top:10px}
+ .promotion-image{position:absolute;inset:0 0 auto;width:100%;height:clamp(190px,52.33vw,314px);aspect-ratio:auto;object-fit:cover;object-position:center;margin:0;z-index:-1}
+ .promotion-bottom{padding:14px 12px;gap:8px;flex-direction:row;align-items:center}
+ .promotion-bottom>div{min-width:0}.promotion-bottom>div>span{font-size:11px}.promotion-bottom small{font-size:7px;letter-spacing:0;line-height:1.6;margin-top:4px}
+ .promotion-link{width:auto;flex-shrink:0;gap:10px;font-size:10px;padding:12px 10px;min-height:44px}
+ .promotion-close{top:6px;right:6px;width:44px;height:44px;font-size:24px;background:#fbfcf5cf}
+}
+/* Keep the desktop campaign image continuous behind the headline. */
+@media(min-width:601px){
+ .promotion-copy{min-height:450px;padding-bottom:28px;background:linear-gradient(90deg,#eef4f5cc,transparent 62%)}
+ .promotion-image{position:absolute;inset:0 0 auto;width:100%;height:450px;aspect-ratio:auto;object-fit:cover;margin:0;z-index:-1}
+}
