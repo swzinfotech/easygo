@@ -27,13 +27,8 @@
   }, 2000);
 })();
 
-// Residence spread stays readable without JS; its photo button uses the shared gallery.
-// The sunny residence hero is rendered by residence.mjs, without a JS override.
-// Case headings share static markup and responsive CSS across all four projects.
-// Mobile hero copy visibility is CSS-only and needs no resize handler.
-// Bilingual photo captions stay on one line through responsive CSS.
-// The four residence photo cards use CSS for their two-column mobile layout.
-// Independent information groups use CSS grid for diagrams, facts, then living.
+// The new first Alian case and original residence keep independent shared galleries.
+// alian.mjs and residence.mjs render separate responsive project spreads.
 // Progressive enhancement: all comparison topics remain readable without JS.
 document.querySelectorAll('[data-house-explorer]').forEach(explorer => {
   const buttons = [...explorer.querySelectorAll('[data-house-topic]')];
