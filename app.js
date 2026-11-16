@@ -1,3 +1,4 @@
+// First residence project information icons are rendered by build.mjs as decorative inline SVG.
 // Google Analytics is initialized once in each page head via analytics.mjs.
 // Homepage campaign: native dialog handles focus containment and Escape.
 // Desktop and mobile share the same poster markup; CSS scales the composition.
